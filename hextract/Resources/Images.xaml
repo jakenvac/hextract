@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:hextract.Resources">
+    
+    <BitmapImage UriSource="/bg.jpg" x:Key="imgCheck" />
+    <ImageBrush ImageSource="bg.jpg" x:Key="bgCheck"
+                TileMode="Tile"
+                Stretch="None"
+                Viewport="0,0,25,25"
+                ViewportUnits="Absolute"
+                />
+    
+</ResourceDictionary>

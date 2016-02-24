@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:hextract.Resources"
+                    xmlns:converters="clr-namespace:hextract.Resources.Converters">
+    
+    <converters:listPopToVisible x:Key="listPopToVisible" />
+    <converters:InvertHex x:Key="InvertHex" />
+    
+</ResourceDictionary>

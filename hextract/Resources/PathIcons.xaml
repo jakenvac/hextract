@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:hextract.Resources.Converters">
+
+    <Style TargetType="Path" x:Key="Trash">
+        <Setter Property="Data" Value="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
+    </Style>
+
+    <Style TargetType="Path" x:Key="Floppy">
+        <Setter Property="Data" Value="M4.5,22L2,19.5V4A2,2 0 0,1 4,2H20A2,2 0 0,1 22,4V20A2,2 0 0,1 20,22H17V15A1,1 0 0,0 16,14H7A1,1 0 0,0 6,15V22H4.5M5,4V10A1,1 0 0,0 6,11H18A1,1 0 0,0 19,10V4H5M8,16H11V20H8V16M20,4V5H21V4H20Z" />
+    </Style>
+
+</ResourceDictionary>
