@@ -1,2 +1,2 @@
 # hextract
-A simple hex colour extracting tool
+A simple hex colour extracting and exporting tool
