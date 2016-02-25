@@ -61,29 +61,37 @@
                     </Grid.Resources>
 
                     <StackPanel Orientation="Horizontal">
-                        <Path Style="{StaticResource Trash}" Height="10" Width="10" Stroke="White"/>
-                        <TextBlock  MouseLeftButtonDown="ClearList">
+                        <Viewbox Margin="0,0,5,0" VerticalAlignment="Center" Height="{Binding ElementName=clearText, Path=FontSize}">
+                            <Path Style="{StaticResource Trash}" Fill="White"/>
+                        </Viewbox>
+                        <TextBlock  MouseLeftButtonDown="ClearList" Name="clearText" VerticalAlignment="Center">
                             <Underline>C</Underline>lear
                         </TextBlock>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" MouseLeftButtonDown="ExportList">
-                        <TextBlock>
+                        <TextBlock VerticalAlignment="Center">
                             E<Underline>x</Underline>port
                         </TextBlock>
+                        <Viewbox Margin="5,0,0,0" VerticalAlignment="Center" Height="{Binding ElementName=clearText, Path=FontSize}">
+                            <Path Style="{StaticResource Floppy}" Fill="White"/>
+                        </Viewbox>
                     </StackPanel>
-                    
+
                 </Grid>
             </Grid>
 
         </Border>
 
-        <TextBlock Grid.Row="2"
-                   Text="📂 Drag file here..."
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
+        <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Viewbox Height="{Binding ElementName=clearText, Path=FontSize}" Margin="0,0,5,0">
+                <Path Style="{StaticResource File}" Fill="#AAAAAA" />
+            </Viewbox>
+            <TextBlock Grid.Row="2"
+                   Text="Drag file here..."
                    Foreground="#AAAAAA"
                    Visibility="{Binding custColors, Converter={StaticResource listPopToVisible}, ConverterParameter='txt'}" />
+        </StackPanel>
 
         <ListBox Grid.Row="2" ItemsSource="{Binding custColors}" Background="{StaticResource bgCheck}" Visibility="{Binding custColors, Converter={StaticResource listPopToVisible}}">
             <ListBox.ItemContainerStyle>
