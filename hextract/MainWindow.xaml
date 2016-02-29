@@ -2,7 +2,7 @@
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:ViewModel="clr-namespace:hextract.ViewModel"
-	Title="test" MinHeight="320" MaxHeight="820" Width="320"
+	Title="Hextract" MinHeight="320" MaxHeight="820" Width="320"
 	WindowStyle="None"
     SizeToContent="Height"
 	BorderBrush="Black"
@@ -27,11 +27,12 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <Border Background="#ff77BB" MouseLeftButtonDown="RowDefinition_MouseLeftButtonDown" Padding="5,2">
-            <Grid>
-                <TextBlock Text="Colour Extractor" Foreground="White" />
-                <TextBlock Text="❌" Foreground="White" HorizontalAlignment="Right" FontWeight="Bold" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"/>
-            </Grid>
+        <Border Background="#ff7ad3" MouseLeftButtonDown="RowDefinition_MouseLeftButtonDown" Padding="5,2">
+            <Border Background="Transparent" MouseLeftButtonDown="CloseWindow" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,0,3">
+                    <Viewbox Height="15" VerticalAlignment="Center">
+                        <Path Style="{StaticResource Close}" Fill="White" VerticalAlignment="Center" Stroke="White" StrokeThickness="1"/>
+                    </Viewbox>
+                </Border>
         </Border>
 
         <Border Background="#ff99dd" Padding="5,2" Grid.Row="1">
@@ -43,39 +44,30 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <Grid>
-                    <TextBlock Text="Colours: " Visibility="{Binding custColors, Converter={StaticResource listPopToVisible}, ConverterParameter='hidden'}">
-                        <Run Text="{Binding custColors.Count, Mode=OneWay}" />
-                    </TextBlock>
-                </Grid>
-
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="0" Margin="7">
                     <Grid.Resources>
                         <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="FontSize" Value="15" />
                             <Setter Property="Foreground" Value="White" />
+                            <Setter Property="FontFamily" Value="{StaticResource Roboto}" />
                         </Style>
                     </Grid.Resources>
+                    
+                    <TextBlock Text="Hextract" VerticalAlignment="Center" FontSize="20" />
 
-                    <StackPanel Orientation="Horizontal">
-                        <Viewbox Margin="0,0,5,0" VerticalAlignment="Center" Height="{Binding ElementName=clearText, Path=FontSize}">
-                            <Path Style="{StaticResource Trash}" Fill="White"/>
-                        </Viewbox>
-                        <TextBlock  MouseLeftButtonDown="ClearList" Name="clearText" VerticalAlignment="Center">
-                            <Underline>C</Underline>lear
-                        </TextBlock>
-                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Border MouseLeftButtonDown="ClearList" Background="Transparent">
+                            <Viewbox Margin="0,0,5,0" VerticalAlignment="Center" Height="24" >
+                                <Path Style="{StaticResource Trash}" Fill="White"/>
+                            </Viewbox>
+                        </Border>
 
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" MouseLeftButtonDown="ExportList">
-                        <TextBlock VerticalAlignment="Center">
-                            E<Underline>x</Underline>port
-                        </TextBlock>
-                        <Viewbox Margin="5,0,0,0" VerticalAlignment="Center" Height="{Binding ElementName=clearText, Path=FontSize}">
-                            <Path Style="{StaticResource Floppy}" Fill="White"/>
-                        </Viewbox>
+                        <Border MouseLeftButtonDown="ExportList" Background="Transparent">
+                            <Viewbox Margin="5,0,0,0" VerticalAlignment="Center" Height="24">
+                                <Path Style="{StaticResource Export}" Fill="White"/>
+                            </Viewbox>
+                        </Border>
                     </StackPanel>
 
                 </Grid>
@@ -84,10 +76,11 @@
         </Border>
 
         <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
-            <Viewbox Height="{Binding ElementName=clearText, Path=FontSize}" Margin="0,0,5,0">
+            <Viewbox Height="{Binding ElementName=DropText, Path=FontSize}" Margin="0,0,5,0">
                 <Path Style="{StaticResource File}" Fill="#AAAAAA" />
             </Viewbox>
             <TextBlock Grid.Row="2"
+                       Name="DropText"
                    Text="Drag file here..."
                    Foreground="#AAAAAA"
                    Visibility="{Binding custColors, Converter={StaticResource listPopToVisible}, ConverterParameter='txt'}" />

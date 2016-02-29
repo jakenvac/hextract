@@ -36,7 +36,7 @@ namespace hextract
             this.DragMove();
         }
 
-        void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        void CloseWindow(object sender, MouseButtonEventArgs e)
         {
             this.Close();
         }
