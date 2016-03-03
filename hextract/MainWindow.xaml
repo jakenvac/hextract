@@ -8,7 +8,7 @@
 	BorderBrush="Black"
 	BorderThickness="0"
     Background="Transparent"
-	ResizeMode="CanResizeWithGrip"
+	ResizeMode="NoResize"
 	Drop="Window_Drop"
 	AllowDrop="True"
     AllowsTransparency="True"
