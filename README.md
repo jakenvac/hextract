@@ -1,5 +1,6 @@
 # hextract
 A simple hex colour extracting and exporting tool
+[![Build status](https://ci.appveyor.com/api/projects/status/aw74koaqdlmnb63h?svg=true)](https://ci.appveyor.com/project/JakeHL/hextract)
 
 ###Usage
 Drag a text based document *(.txt, .html, .xml, .xaml etc.)* that contains hexacdecimal colour codes onto the main window area and the application will generate a listview of all of the coulours present in the document.
