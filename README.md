@@ -1,5 +1,6 @@
 # hextract
-A simple hex colour extracting and exporting tool
+Extract colours from documents!  
+
 [![Build status](https://ci.appveyor.com/api/projects/status/aw74koaqdlmnb63h?svg=true)](https://ci.appveyor.com/project/JakeHL/hextract)
 
 ###Usage
